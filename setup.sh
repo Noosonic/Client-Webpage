@@ -1,7 +1,7 @@
 mkdir -p ~/.streamlit/
 echo "\
 [global]\n\
-dataFrameSerialization=\"Legacy\"\n\
+dataFrameSerialization = \"legacy\"\n\
 \n\
 [server]\n\
 headless = true\n\
