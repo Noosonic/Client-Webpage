@@ -3,11 +3,11 @@ mkdir -p ~/.streamlit/
 echo "\
 [server]\n\
 headless = true\n\
-port = 8501\n\
+port = $PORT\n\
 enableCORS = true\n\
 enableXsrfProtection = true\n\
 \n\
 [browser]\n\
-serverPort = 8501\n\
+serverPort = $PORT\n\
 \n\
 " > ~/.streamlit/config.toml
