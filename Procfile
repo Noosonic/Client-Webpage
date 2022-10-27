@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run app.py --dataFrameSerialization = "legacy"
+web: sh setup.sh && streamlit run app.py --global.dataFrameSerialization = "legacy"
