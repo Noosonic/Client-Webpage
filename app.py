@@ -224,7 +224,7 @@ def longFunction(output, again):
                             setTime3 = datetime.now().timestamp()
                             current = datetime.now().timestamp()
                             time_remains = (360 - (current - previous))
-                            if ((time_remains // 60 < 6) and (time_remains // 60 > 1)) and (time_remains // 60 != current_waiting):
+                            if ((time_remains // 60 < 6) and (time_remains // 60 > 0)) and (time_remains // 60 != current_waiting):
                                 current_waiting = (time_remains // 60)
                                 st.warning("ถึงคิวของท่ามแล้ว ท่านมีเวลา {} นาทีเพื่อไปถึงห้องตรวจ".format(str(time_remains // 60)))
                             status = retriveData(output)
@@ -232,21 +232,6 @@ def longFunction(output, again):
                     if (retriveData(output) != "Complete") and (retriveData(output) != "Waiting"):
                         updateData(output, "Pending3")
                 elif status == "Pending3":
-                    current = datetime.now().timestamp()
-                    time_remains = (360 - (current - previous))
-                    st.warning("คิวของท่ามได้ถูกเรียกแล้ว ตอนนี้คุณเหลือเวลา 1.0 นาทีเพื่อไปถึงห้องตรวจ")
-                    setTime4 = datetime.now().timestamp() - delay
-                    while time_remains > 0 and current_Status == status:
-                        currentTime4 = datetime.now().timestamp()
-                        if (currentTime4 - setTime4) > delay:
-                            setTime4 = datetime.now().timestamp()
-                            current = datetime.now().timestamp()
-                            time_remains = (360 - (current - previous))
-                            status = retriveData(output)
-                    current_Status = status
-                    if (retriveData(output) != "Complete") and (retriveData(output) != "Waiting"):
-                        updateData(output, "Pending4")
-                elif status == "Pending4":
                     st.warning("โปรดเข้าพบแพทย์ทันที")
                     current_Status = status
                     setTime5 = datetime.now().timestamp() - delay
